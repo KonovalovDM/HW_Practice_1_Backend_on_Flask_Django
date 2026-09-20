@@ -95,4 +95,4 @@ fetch('http://127.0.0.1:5000/api/v1/xml/order', {
 Promise { <state>: "pending" }
 
 HTTP статус: 200 debugger eval code:13:13
-Тело ответа: <order total="80" products="product B,product A" client="Jon Smith" /> debugger eval code:14:13
+Тело ответа: <order total="80" products="product B,product A" client="Jon Smith" />  debugger eval code:14:13
