@@ -58,5 +58,5 @@ Promise { <state>: "pending" }
 Ответ: 
 Object { client: "Jon Smith", total: 80, products: (2) […] }
 
-Сохраните ответ сервера — это будет вашим результатом для этой задачи.
+
 
