@@ -22,16 +22,41 @@ Practice_1_Backend_on_Flask_Django
 
 4. Отправить запрос на http://127.0.0.1:5000/api/v1/json/order методом fetch, содержащий структуру:
 
-Экспериментируйте с разными данными в запросе, чтобы лучше понять, как сервер обрабатывает информацию.
+const orderData = {
+    client: "Jon Smith",
+    products: [
+        { name: "product A", price: 20 },
+        { name: "product B", price: 40 },
+        { name: "product B", price: 40 }
+    ],
+    voucher: {
+        discount: "20%"
+    }
+};
 
-5. Проверьте ответ сервера в консоли. Ответ должен содержать данные:
+fetch('http://127.0.0.1:5000/api/v1/json/order', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(orderData)
+})
+.then(response => response.json())
+.then(data => console.log('Ответ:', data))
+.catch(error => console.error('Ошибка:', error));
 
-{
-  "client": "Jon Smith",
-  "total": 80.0,
-  "products": ["product A", "product B"]
-}
 
+5. Проверьте ответ сервера в консоли. Ответ должен выглядеть так:
+
+const orderData = {
+    client: "Jon Smith",
+    products: [
+        { name: "product A", price: 20 },
+        { name: "product B", price: 40 },…
+Promise { <state>: "pending" }
+
+Ответ: 
+Object { client: "Jon Smith", total: 80, products: (2) […] }
 
 Сохраните ответ сервера — это будет вашим результатом для этой задачи.
 
